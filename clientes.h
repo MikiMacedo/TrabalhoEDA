@@ -38,7 +38,7 @@ Cliente* inserirClFim(Cliente* inicio, int idcl, char nom[], int nc, char mora[]
 // remover lista ligada
 int removerTodosCl(Cliente* inicio);
 // consultar registo a partir do identificador de cliente
-Cliente* consultarcl(Cliente* inicio, int idcl);
+Cliente* consultarCliente(Cliente* inicio, int idcl);
 
 // Criar uma cópia da lista ligada
 Cliente* copiaListaLigadaCl(Cliente* inicio);
@@ -46,7 +46,7 @@ Cliente* copiaListaLigadaCl(Cliente* inicio);
 // Alterar dados
 
 // Guarda a lista de Clientes
-int guardarCliente(Cliente* inicio);
+int guardarClientes(Cliente* inicio);
 
 // Le a lista de Clientes
 Cliente* lerClientes();

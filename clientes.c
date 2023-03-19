@@ -60,7 +60,7 @@ int removerTodosCl(Cliente* inicio) // remover todos os registos de Clientes da 
  }
 }
 
-Cliente* consultarCl(Cliente* inicio, int idcl) // consultar registo a partir do identificador
+Cliente* consultarCliente(Cliente* inicio, int idcl) // consultar registo a partir do identificador
 {
  while(inicio!=NULL)
  {if (inicio->idcliente==idcl) return(inicio);

@@ -1,18 +1,18 @@
 #include <stdio.h>
-#include "equipamentos.h"
 #include "clientes.h"
 
 int menu()
 {int op;
  printf("M E N U\n");
- printf("1 Inserir Equipamento\n");
- printf("2 Alterar Equipamento\n");
- printf("3 Listar Equipamentos\n");
- printf("4 Listar Equipamento pela autonomia\n");
- printf("5 Listar Equipamento numa determinada localização\n");
- printf("6 Remover Equipamento\n");
- printf("7 Guardar Equipamento\n");
- printf("8 Ler Equipamentos\n");
+ printf("1 Inserir Cliente\n");
+ printf("2 Alterar Cliente\n");
+ printf("3 Listar Clientes\n");
+ printf("4 Consultar Cliente\n");
+ printf("5 Remover Cliente\n");
+ printf("6 Guardar Clientes\n");
+ printf("7 Ler Clientes\n");
+ printf("8 Ler Alugueres\n");
+ printf("9 Inserir Aluguer\n");
  printf("0 Sair\n");
  printf("Opcao:\n");
  scanf("%d",&op);
@@ -20,52 +20,63 @@ int menu()
 }
 
 int main()
-{Equipamento* equipamentos = NULL; // Lista ligada vazia 
- int op, ideq;
- float bat, aut;
- char tipo[50], loc[50];
+{Cliente* clientes = NULL; // Lista ligada vazia 
+ Aluguer* alugueres = NULL;
+ int op, idcl, nc, ideqal, idclal, temp;
+ float sald, cost;
+ char nom[50], mora[200];
  do
  {
   op = menu();
   switch(op)
-  {case 1: printf("Identificador?\n");
-	   scanf("%d",&ideq);
+  {case 1: printf("Identificador do Cliente?\n");
+	   scanf("%d",&idcl);
 	   scanf("%*c"); 
-	   printf("Tipo\n");
-	   scanf("%[^\n]s",tipo);
-	   printf("Nivel da bateria?\n");
-	   scanf("%f",&bat);
-	   printf("Autonomia\n");
-	   scanf("%f",&aut);
-	   printf("Localização\n");
-	   scanf("%s",&loc);
-			equipamentos = inserirEquipamento(equipamentos,ideq,tipo,bat,aut,loc);
+	   printf("Nome\n");
+	   scanf("%[^\n]s",&nom);
+	   printf("NIF?\n");
+	   scanf("%d",&nc);
+	   printf("Morada\n");
+	   scanf("%[^\n]s",&mora);
+	   printf("Saldo\n");
+	   scanf("%f",&sald);
+			clientes = inserirCliente(clientes,idcl,nom,nc,mora,sald);
 	   break;
-   case 2: printf("Identificador do equipamento que quer alterar?\n");
-		scanf("%d",&ideq);
-		scanf("%*c"); 
-		printf("Tipo\n");
-		scanf("%[^\n]s",tipo);
-		printf("Nivel da bateria?\n");
-		scanf("%f",&bat);
-		printf("Autonomia\n");
-		scanf("%f",&aut);
-		printf("Localização\n");
-		scanf("%s",&loc);
-			equipamentos = alterarEquipamento(equipamentos,ideq,tipo,bat,aut,loc);
+   case 2: printf("Identificador do cliente que quer alterar?\n");
+	   scanf("%d",&idcl);
+	   scanf("%*c"); 
+	   printf("Nome\n");
+	   scanf("%[^\n]s",&nom);
+	   printf("NIF?\n");
+	   scanf("%d",&nc);
+	   printf("Morada\n");
+	   scanf("%[^\n]s",&mora);
+	   printf("Saldo\n");
+	   scanf("%f",&sald);
+			clientes = alterarCliente(clientes,idcl,nom,nc,mora,sald);
 		break;
-   case 3: listarEquipamentos(equipamentos); break;
-   case 4: listarEquipamentosautonomia(equipamentos); break;
-   case 5: printf("Localização que pretende?\n");
-		scanf("%s",&loc);
-			listarEquipamentosLocaliza(equipamentos,loc);
-		break;
-   case 6: printf("Identificador do equipamento a remover?\n");
-	   scanf("%d",&ideq);
-	   equipamentos = removerEquipamento(equipamentos, ideq);
+   case 3: listarClientes(clientes); break;
+   case 4: printf("Identificador do Cliente a consultar?\n");
+	   scanf("%d",&idcl);
+	   consultarCliente(clientes, idcl);
 	   break;
-   case 7: guardarEquipamento(equipamentos); break;
-   case 8: equipamentos = lerEquipamentos(); break;
+   case 5: printf("Identificador do Cliente a remover?\n");
+	   scanf("%d",&idcl);
+	   clientes = removerCliente(clientes, idcl);
+	   break;
+   case 6: guardarClientes(clientes); break;
+   case 7: clientes = lerClientes(); break;
+   case 8: alugueres = lerAlugueres(); break;
+   case 9: printf("Identificador do Equipamento a ser alugado?\n");
+	   scanf("%d",&ideqal);
+	   printf("Identificador do Cliente que vai alugar?\n");
+	   scanf("%d",&nc);
+	   printf("Tempo de aluguer (em minutos)\n");
+	   scanf("%d",&temp);
+	   cost = temp * 0,1;
+	   	alugueres = inserirAluguer(alugueres,ideqal,idclal,temp,cost);
+		guardarAlugueres(alugueres);
+	break;
   }
  } while (op!=0);
 
