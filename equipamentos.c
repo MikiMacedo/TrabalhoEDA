@@ -9,7 +9,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include "equipamentos.h"
-#include "aluguer.h"
 
 int tamanho(Equipamento* inicio) //Tamanho da lista ligada
 {Equipamento* aux = inicio;
@@ -195,7 +194,7 @@ Equipamento* alterarEquipamento(Equipamento* inicio, int ideq, char tip[], float
  Equipamento *anterior=inicio, *atual=inicio, *aux;
 
  if (atual==NULL) return(NULL);
- else if (atual->idequipamento == ideq) // remoção do 1º registo
+ else if (atual->idequipamento == ideq) // alterar o 1º registo
  {aux = atual->seguinteq;
   {atual->idequipamento = ideq;
    strcpy(atual->tipo,tip);
@@ -227,7 +226,7 @@ Equipamento* alterarEquipamento(Equipamento* inicio, int ideq, char tip[], float
 }
 
 // listar na consola o conteúdo da lista por ordem decrescente da autonomia
-void listarEquipamentosAutonomia(Equipamento * regequip, int idequipamento, char tipo[], float bateria, float autonomia, char localiza[])
+void listarEquipamentosAutonomia(Equipamento * regequip)
 {
 int i, j, auttemp, ideqtemp;
 
