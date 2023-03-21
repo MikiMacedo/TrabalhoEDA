@@ -32,6 +32,7 @@ int main()
   {case 1: printf("Identificador do Cliente?\n");
 	   scanf("%d",&idcl);
 	   scanf("%*c"); 
+  	   	 // Faltou colocar a função para verificar se existe o equipamento (existeEquipamento) com um "if" 
 	   printf("Nome\n");
 	   scanf("%[^\n]s",&nom);
 	   printf("NIF?\n");
@@ -45,6 +46,7 @@ int main()
    case 2: printf("Identificador do cliente que quer alterar?\n");
 	   scanf("%d",&idcl);
 	   scanf("%*c"); 
+	     // Faltou colocar a função para verificar se existe o equipamento (existeEquipamento) com um "if" 
 	   printf("Nome\n");
 	   scanf("%[^\n]s",&nom);
 	   printf("NIF?\n");
@@ -68,6 +70,7 @@ int main()
    case 7: clientes = lerClientes(); break;
    case 8: alugueres = lerAlugueres(); break;
    case 9: printf("Identificador do Equipamento a ser alugado?\n");
+   // Faltou função para colocar Data e Hora do Aluguer para registo (automático)...
 	   scanf("%d",&ideqal);
 	   printf("Identificador do Cliente que vai alugar?\n");
 	   scanf("%d",&nc);

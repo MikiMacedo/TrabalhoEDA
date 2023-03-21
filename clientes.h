@@ -1,11 +1,11 @@
 #include <stdio.h>
 
 typedef struct registocliente
-{int idcliente; // Identificador do Cliente de mobilidade elétrica
+{int idcliente; // Identificador do Cliente de mobilidade elétrica (para nota, talvez fosse melhor que este identificador fosse o NIF)
  char nome[60];
  int nif;
  char morada[200];
- float saldo;
+ float saldo; 
  struct registocliente* seguinte;
 } Cliente;
 

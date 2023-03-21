@@ -29,6 +29,7 @@ int main()
   switch(op)
   {case 1: printf("Identificador?\n");
 	   scanf("%d",&ideq);
+	   	 // Faltou colocar a função para verificar se existe o equipamento (existeEquipamento) com um "if" 
 	   scanf("%*c"); 
 	   printf("Tipo\n");
 	   scanf("%[^\n]s",tipo);
@@ -42,6 +43,7 @@ int main()
 	   break;
    case 2: printf("Identificador do equipamento que quer alterar?\n");
 		scanf("%d",&ideq);
+		 // Faltou colocar a função para verificar se existe o equipamento (existeEquipamento) com um "if" 
 		scanf("%*c"); 
 		printf("Tipo\n");
 		scanf("%[^\n]s",tipo);

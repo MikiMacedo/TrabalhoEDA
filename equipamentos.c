@@ -263,3 +263,13 @@ void listarEquipamentosLocaliza(Equipamento * inicio, char localizaprocura[])
 }
 }
 
+//Verifica se já existe registo com esse Identificador de Equipamento
+// devolve 1 se existir ou 0 caso contrário
+int existeEquipamento(Equipamento* inicio, int ideq)
+{while(inicio!=NULL)
+  {if (inicio->idequipamento == ideq) return(1);
+   inicio = inicio->seguinteq;
+  }
+ return(0);
+}
+

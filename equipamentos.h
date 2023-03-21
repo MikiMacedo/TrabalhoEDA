@@ -49,3 +49,7 @@ void listarEquipamentosAutonomia(Equipamento* regequip);
 
 // Listar Equipamentos em uma determinada localização
 void listarEquipamentosLocaliza(Equipamento * inicio, char localizaprocura[]);
+
+// Verifica se existe já o identificador do equipamento na list
+// devolve 1 se existir ou 0 caso contrário
+int existeEquipamento(Equipamento* inicio, int ideq);
